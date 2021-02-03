@@ -59,7 +59,7 @@
                                     @foreach ($inboxes as $inbox)
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
-                                            <td>{{ \Carbon\Carbon::parse($inbox->inbox_received_date)->isoFormat('D MMMM Y')}}</td>
+                                            <td>{{ \Carbon\Carbon::parse($inbox->inbox_received_date)->isoFormat('DD MMMM Y')}}</td>
                                             <td>
                                                 <a href="{{ route('inbox.show',$inbox->id)}}">{{ $inbox->inbox_agenda_number}}</a>
                                             </td>

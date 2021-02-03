@@ -47,7 +47,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/filemanager')}}" class="nav-link {{ (request()->segment(1) == 'filemanager') ? 'active' : '' }}">
+                    <a href="{{ url('/filemanager')}}" class="nav-link {{ (request()->segment(1) == 'filemanager') ? 'active' : '' }}" target="_blank">
                         <i class="nav-icon fas fa-folder"></i>
                         <p>File</p>
                     </a>

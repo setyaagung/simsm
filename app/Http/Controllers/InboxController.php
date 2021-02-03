@@ -20,7 +20,7 @@ class InboxController extends Controller
     {
         setlocale(LC_TIME, 'id_ID');
         Carbon::setLocale('id');
-        $inboxes = Inbox::orderBy('inbox_received_date', 'ASC')->get();
+        $inboxes = Inbox::orderBy('inbox_received_date', 'DESC')->get();
         return view('inbox.index', compact('inboxes'));
     }
 
@@ -108,6 +108,9 @@ class InboxController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $inbox = Inbox::findOrFail($id);
+        $inbox->delete();
+        Storage::delete($inbox->file);
+        return redirect()->back()->with('delete', 'Data surat masuk berhasil dihapus');
     }
 }

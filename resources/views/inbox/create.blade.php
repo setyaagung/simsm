@@ -67,7 +67,6 @@
                                                 </span>
                                                 <input id="file" class="form-control" type="text" name="file">
                                             </div>
-                                            <img id="holder" style="margin-top:15px;max-height:100px;">
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +97,7 @@
 @endsection
 
 @push('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js')}}"></script>
 <script>
     $(document).ready(function(){
         $('#lfm').filemanager('file');

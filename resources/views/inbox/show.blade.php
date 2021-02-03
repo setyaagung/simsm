@@ -19,22 +19,22 @@
                             </h3>
                         </div>
                         <div class="card-body">
-                            <table class="table table-hover table-striped">
+                            <table style="width: 100%" class="table table-hover table-striped table-responsive-md">
                                 <tr>
                                     <th>Tanggal Surat Diterima</th>
                                     <td>:</td>
-                                    <td>{{ \Carbon\Carbon::parse($inbox->inbox_received_date)->isoFormat('D MMMM Y')}}</td>
+                                    <td>{{ \Carbon\Carbon::parse($inbox->inbox_received_date)->isoFormat('DD MMMM Y')}}</td>
                                     <th>No Agenda Surat</th>
                                     <td>:</td>
                                     <td>{{ $inbox->inbox_agenda_number}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Tanggal Surat Diterbitkan</th>
-                                    <td>:</td>
-                                    <td>{{ \Carbon\Carbon::parse($inbox->inbox_date)->isoFormat('D MMMM Y')}}</td>
-                                    <th>Alamat Surat</th>
-                                    <td>:</td>
-                                    <td>{{ $inbox->inbox_address}}</td>
+                                    <th style="width: 25%">Tanggal Surat Diterbitkan</th>
+                                    <td style="width: 5%">:</td>
+                                    <td style="width: 20%">{{ \Carbon\Carbon::parse($inbox->inbox_date)->isoFormat('DD MMMM Y')}}</td>
+                                    <th style="width: 15%">Alamat Surat</th>
+                                    <td style="width: 5%">:</td>
+                                    <td style="width: 30%">{{ $inbox->inbox_address}}</td>
                                 </tr>
                                 <tr>
                                     <th>Nomor Surat Masuk</th>
