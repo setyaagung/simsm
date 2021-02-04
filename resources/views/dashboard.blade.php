@@ -21,13 +21,13 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>150</h3>
-                            <p>New Orders</p>
+                            <h3>{{ $inboxes}}</h3>
+                            <p>Data Surat Masuk</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="ion ion-document"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('inbox.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -49,8 +49,8 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>5</h3>
-                            <p>User Registrations</p>
+                            <h3>{{ $users}}</h3>
+                            <p>Pengguna</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>

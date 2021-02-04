@@ -25,4 +25,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'file'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
+    Route::resource('role', 'RoleController');
+    Route::resource('user', 'UserController');
 });

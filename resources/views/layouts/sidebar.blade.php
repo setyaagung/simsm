@@ -52,6 +52,31 @@
                         <p>File</p>
                     </a>
                 </li>
+                @if (Auth::user()->role_id == 1)
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link {{ (request()->segment(1) == 'role') ? 'active' : '' }} {{ (request()->segment(1) == 'user') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-user-cog"></i>
+                            <p>
+                                Master Data
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('role.index')}}" class="nav-link {{ (request()->segment(1) == 'role') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Role</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('user.index')}}" class="nav-link {{ (request()->segment(1) == 'user') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>User</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
