@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use PDF;
 
 class InboxController extends Controller
 {
@@ -112,5 +113,12 @@ class InboxController extends Controller
         $inbox->delete();
         Storage::delete($inbox->file);
         return redirect()->back()->with('delete', 'Data surat masuk berhasil dihapus');
+    }
+
+    public function print_pdf()
+    {
+        $inboxes = Inbox::all();
+        $pdf = PDF::loadView('inbox.print_pdf', compact('inboxes'))->setPaper('A4', 'landscape');
+        return $pdf->stream();
     }
 }

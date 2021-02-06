@@ -18,6 +18,14 @@
     <body class="hold-transition login-page">
         <div class="wrapper">
             <div class="text-center" style="margin-top: 200px">
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Berhasil!</strong> {{$message}}.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <h1>Selamat Datang Di Sistem Informasi Manajemen
                     <br>
                     Surat Menyurat

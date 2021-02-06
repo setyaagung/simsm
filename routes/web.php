@@ -27,4 +27,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::resource('role', 'RoleController');
     Route::resource('user', 'UserController');
+    Route::get('/print-pdf', 'InboxController@print_pdf')->name('inbox.print-pdf');
+    Route::get('/change-password', 'ChangePasswordController@index')->name('change-password.index');
+    Route::post('/change-password', 'ChangePasswordController@change_password')->name('change-password');
 });

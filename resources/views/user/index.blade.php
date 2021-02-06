@@ -20,6 +20,30 @@
                             <a href="{{ route('user.create')}}" class="btn btn-primary btn-sm float-right">Tambah</a>
                         </div>
                         <div class="card-body">
+                            @if ($message = Session::get('create'))
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                    <strong>Success!</strong> {{$message}}.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
+                            @if ($message = Session::get('update'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <strong>Updated!</strong> {{$message}}.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
+                            @if ($message = Session::get('delete'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong>Deleted!</strong> {{$message}}.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
                             <table id="example1" class="table table-bordered table-striped table-sm">
                                 <thead>
                                     <tr>
@@ -38,7 +62,7 @@
                                             <td>{{ $user->role->name}}</td>
                                             <td>{{ $user->email}}</td>
                                             <td>
-                                                <a href="" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i> Edit</a>
+                                                <a href="{{ route('user.edit',$user->id)}}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i> Edit</a>
                                             </td>
                                         </tr>
                                     @endforeach
