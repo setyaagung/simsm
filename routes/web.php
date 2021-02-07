@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('inbox', 'InboxController');
-    Route::group(['prefix' => 'file'], function () {
+    Route::group(['prefix' => 'file-manager'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
     Route::resource('role', 'RoleController');
