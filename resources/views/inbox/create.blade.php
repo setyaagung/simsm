@@ -59,6 +59,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Upload File</label>
+                                            <input type="file" class="form-control p-1" name="file">
+                                            <!--
                                             <div class="input-group">
                                                 <span class="input-group-btn">
                                                     <a id="lfm" data-input="file" data-preview="holder" class="btn btn-primary text-white">
@@ -67,6 +69,7 @@
                                                 </span>
                                                 <input id="file" class="form-control" type="text" name="file">
                                             </div>
+                                            -->
                                         </div>
                                     </div>
                                 </div>
