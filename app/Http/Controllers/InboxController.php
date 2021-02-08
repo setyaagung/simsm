@@ -48,7 +48,7 @@ class InboxController extends Controller
             $file = $request->file('file');
             $file_extension = $file->getClientOriginalExtension();
             $filename = 'SuratMasuk-' . time() . '.' . $file_extension;
-            $data['file'] = $file->move('public/upload/files/', $filename);
+            $data['file'] = $file->move('upload/files/', $filename);
         }
         Inbox::create($data);
         return redirect()->route('inbox.index')->with('create', 'Data surat masuk berhasil ditambahkan');
@@ -94,7 +94,7 @@ class InboxController extends Controller
             $file = $request->file('file');
             $file_extension = $file->getClientOriginalExtension();
             $filename = 'SuratMasuk-' . time() . '.' . $file_extension;
-            $data['file'] = $file->move('public/upload/files/', $filename);
+            $data['file'] = $file->move('upload/files/', $filename);
         }
         $inbox->update($data);
         return redirect()->route('inbox.index')->with('update', 'Data surat masuk berhasil diperbarui');
