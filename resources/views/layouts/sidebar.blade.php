@@ -46,12 +46,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ url('/filemanager')}}" class="nav-link {{ (request()->segment(1) == 'filemanager') ? 'active' : '' }}" target="_blank">
-                        <i class="nav-icon fas fa-folder"></i>
-                        <p>File</p>
-                    </a>
-                </li>
                 @if (Auth::user()->role_id == 1)
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link {{ (request()->segment(1) == 'role') ? 'active' : '' }} {{ (request()->segment(1) == 'user') ? 'active' : '' }}">

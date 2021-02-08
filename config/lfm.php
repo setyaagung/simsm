@@ -58,6 +58,7 @@ return [
                 'image/svg+xml',
                 'application/pdf',
                 'text/plain',
+                'application/docx',
             ],
         ],
         'image' => [

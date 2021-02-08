@@ -60,16 +60,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Upload File</label>
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <a id="lfm" data-input="file" data-preview="holder" class="btn btn-primary text-white">
-                                                        <i class="fas fa-file"></i> Choose
-                                                    </a>
-                                                </span>
-                                                <input id="file" class="form-control" type="text" name="file" value="{{ $inbox->file }}">
-                                            </div>
-                                            <object id="holder" data="{{ $inbox->file }}" class="mt-3" type="application/pdf" width="300" height="200">
-                                            </object>
+                                            <input type="file" name="file" class="form-control p-1">
+                                            <iframe src="{{ asset($inbox->file)}}" class="mt-3" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
                                         </div>
                                     </div>
                                 </div>
