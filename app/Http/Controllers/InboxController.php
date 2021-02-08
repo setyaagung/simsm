@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use PDF;
 
 class InboxController extends Controller
@@ -48,7 +49,7 @@ class InboxController extends Controller
             $file = $request->file('file');
             $file_extension = $file->getClientOriginalExtension();
             $filename = 'SuratMasuk-' . time() . '.' . $file_extension;
-            $data['file'] = $file->move('upload/files/', $filename);
+            $data['file'] = Storage::putFileAs('public/assets/upload/files/', $file, $filename);
         }
         Inbox::create($data);
         return redirect()->route('inbox.index')->with('create', 'Data surat masuk berhasil ditambahkan');
@@ -90,11 +91,11 @@ class InboxController extends Controller
         $inbox = Inbox::findOrFail($id);
         $data = $request->all();
         if ($request->hasFile('file')) {
-            File::delete($inbox->file);
+            Storage::delete($inbox->file);
             $file = $request->file('file');
             $file_extension = $file->getClientOriginalExtension();
             $filename = 'SuratMasuk-' . time() . '.' . $file_extension;
-            $data['file'] = $file->move('upload/files/', $filename);
+            $data['file'] = Storage::putFileAs('public/assets/upload/files/', $file, $filename);
         }
         $inbox->update($data);
         return redirect()->route('inbox.index')->with('update', 'Data surat masuk berhasil diperbarui');
@@ -110,7 +111,7 @@ class InboxController extends Controller
     {
         $inbox = Inbox::findOrFail($id);
         $inbox->delete();
-        File::delete($inbox->file);
+        Storage::delete($inbox->file);
         return redirect()->back()->with('delete', 'Data surat masuk berhasil dihapus');
     }
 

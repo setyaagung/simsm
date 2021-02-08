@@ -61,7 +61,7 @@
                                         <div class="form-group">
                                             <label for="">Upload File</label>
                                             <input type="file" name="file" class="form-control p-1">
-                                            <iframe src="{{ asset($inbox->file)}}" class="mt-3" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
+                                            <iframe src="{{ Storage::url($inbox->file)}}" class="mt-3" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
                                         </div>
                                     </div>
                                 </div>

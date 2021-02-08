@@ -53,7 +53,7 @@
                                     <th>Berkas / File</th>
                                     <td>:</td>
                                     <td colspan="4">
-                                        <iframe src="{{ asset($inbox->file)}}" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
+                                        <iframe src="{{ Storage::url($inbox->file)}}" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
                                     </td>
                                 </tr>
                             </table>
