@@ -90,6 +90,7 @@ class InboxController extends Controller
         $inbox = Inbox::findOrFail($id);
         $data = $request->all();
         if ($request->hasFile('file')) {
+            File::delete($inbox->file);
             $file = $request->file('file');
             $file_extension = $file->getClientOriginalExtension();
             $filename = 'SuratMasuk-' . time() . '.' . $file_extension;
