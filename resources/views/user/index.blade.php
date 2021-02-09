@@ -63,6 +63,11 @@
                                             <td>{{ $user->email}}</td>
                                             <td>
                                                 <a href="{{ route('user.edit',$user->id)}}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i> Edit</a>
+                                                <form action="{{ route('user.destroy', $user->id)}}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini??')"><i class="fas fa-trash"></i> Hapus</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
